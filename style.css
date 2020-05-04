@@ -1,0 +1,595 @@
+* {
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+*::-webkit-scrollbar {
+    width: 0;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    /* background-color: #f0f0f0; */
+    background-color: rgba(0, 0, 0, 0.863);
+}
+
+.load-page {
+    height: 100vh;
+    background-color: #000044;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 100;
+}
+
+.spinner {
+    height: 2.5rem;
+    width: 2.5rem;
+    background-color: #ffffffd0;
+    padding: 2px;
+}
+
+.spinner .box {
+    height: 100%;
+    width: 0;
+    background-color: black;
+}
+
+.modal {
+    background-color: rgba(0, 0, 0, 0.603);
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 70;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.modal .x {
+    position: absolute;
+    top: 2vh;
+    right: 2vw;
+    color: white;
+    font-size: 3vw;
+    cursor: pointer;
+}
+
+.modal .iframe {
+    width: 50%;
+}
+
+
+/* @keyframes back {
+    10% {
+        background-image: url("images/emil.jpeg");
+    }
+    20% {
+        background-image: url("images/emil.jpeg");
+    }
+    30% {
+        background-image: url("images/emil2.jpeg");
+    }
+    40% {
+        background-image: url("images/emil2.jpeg");
+    }
+    50% {
+        background-image: url("images/emil4.jpeg");
+    }
+    60% {
+        background-image: url("images/emil4.jpeg");
+    }
+    70% {
+        background-image: url("images/emil5.jpeg");
+    }
+    80% {
+        background-image: url("images/emil5.jpeg");
+    }
+    90% {
+        background-image: url("images/emil.jpeg");
+    }
+    100% {
+        background-image: url("images/emil.jpeg");
+    }
+} */
+
+
+/* .stephens-part {
+    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("images/emil.jpeg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation-name: back;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    animation-delay: 2s;
+} */
+
+
+/* .stephens-part video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
+} */
+
+
+/* .stephens-part video source {
+    width: 100vw;
+} */
+
+
+/* .stephens-part div {
+    font-size: 8vw;
+    color: white;
+    display: inline-block;
+    background-color: #000000b4;
+    padding: 0 2vw;
+    font-family: 'Shadows Into Light', cursive;
+} */
+
+.hydrated {
+    margin: 0;
+    padding: 0;
+    height: auto;
+    background-color: black;
+}
+
+
+/* **** STEPHENS PART ****** */
+
+.wrapper {
+    margin: 0%;
+    padding: 0%;
+    width: 100%;
+    height: 100vh;
+    /* background: url(https://media.giphy.com/media/3oEduMhFrYvKk4giac/giphy.gif) no-repeat 50% 50%; */
+    background: url(https://media.giphy.com/media/USs6qiFW1j8AGoRJxO/giphy.gif) no-repeat 50% 50%;
+    background-size: cover;
+    font-family: 'Monument Extended';
+    text-transform: uppercase;
+}
+
+.gif-overlay {
+    margin: 0%;
+    padding: 0%;
+    width: 100%;
+    height: 100vh;
+    background: rgba(14, 14, 14, 0.8);
+    z-index: 1;
+}
+
+.nav {
+    position: absolute;
+    width: 100%;
+    height: 80px;
+}
+
+.artist {
+    z-index: 2;
+    position: absolute;
+    line-height: 80px;
+    margin: 0 40px;
+    color: #fff;
+    top: 1vh;
+    font-size: 2vw;
+    font-family: 'Shadows Into Light', cursive;
+    letter-spacing: 2px;
+}
+
+.watch {
+    z-index: 2;
+    position: absolute;
+    line-height: 80px;
+    right: 2vw;
+    top: .75vh;
+    color: gray;
+    padding: 0 10px;
+    font-family: 'Helvetica';
+    font-size: 1vw;
+    font-weight: 100;
+    letter-spacing: 4px;
+}
+
+.watch ion-icon {
+    z-index: 2;
+    position: relative;
+    top: 1px;
+    padding-right: 6px;
+}
+
+.menu {
+    z-index: 2;
+    position: absolute;
+    line-height: 80px;
+    right: 0;
+    top: 0;
+    margin: 0 40px;
+    color: #fff;
+    padding-top: 4px;
+    height: 2vh;
+    width: 2vw;
+    display: none;
+}
+
+.hero-gif {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 48vw;
+    height: 46vh;
+    background: url(https://media.giphy.com/media/LRyCuSMPTsGq8nKQlE/giphy.gif) no-repeat 50% 50%;
+    background-size: cover;
+    animation: animationGIF 4s cubic-bezier(0, .58, 1, .58);
+    animation-delay: 2s;
+}
+
+.hero-title {
+    position: absolute;
+    top: 50vh;
+    left: 20%;
+    transform: translate(-50% -50%);
+    mix-blend-mode: difference;
+}
+
+.hero-title h1 {
+    color: blueviolet;
+    font-size: 6vw;
+    margin-bottom: 0%;
+}
+
+.glitch {
+    position: relative;
+}
+
+.hero-title p {
+    color: gray;
+    font-family: 'Helvetica';
+    font-size: 1vw;
+    letter-spacing: 14px;
+}
+
+.social-media {
+    position: absolute;
+    bottom: 1vw;
+    left: 2vw;
+    transform: translateY(-50);
+}
+
+.social-media ul {
+    padding: 0;
+}
+
+.social-media ul li {
+    display: inline-block;
+    list-style: none;
+    color: gray;
+    padding: 0 10px;
+    font-family: 'helvetica';
+    font-size: 1vw;
+    font-weight: 100;
+}
+
+.listensong {
+    position: absolute;
+    bottom: 0;
+    right: 40px;
+    transform: translateY(-50%);
+}
+
+.listensong ul li {
+    display: inline-block;
+    list-style: none;
+    color: #fff;
+    padding: 0 10px;
+}
+
+#rotated {
+    color: #fff;
+    font-family: 'helvetica';
+    font-weight: 100;
+    font-size: 1vw;
+}
+
+.rotatethis {
+    position: absolute;
+    top: 54%;
+    left: 74%;
+    transform: translate(-50%, -50%);
+    animation: rotating 20s linear infinite;
+}
+
+
+/* ****** END OF STEPHENS PART ***** */
+
+.vinces-part {
+    min-height: 100vh;
+    z-index: 50;
+    padding: 0 15%;
+    background-color: rgba(14, 14, 14, 0.8);
+}
+
+.vinces-part nav {
+    margin: 0 0;
+    padding-top: 3vh;
+}
+
+.vinces-part nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.vinces-part nav ul li {
+    font-size: 3vw;
+    border-bottom: .1vw #f0f0f0 solid;
+    font-family: 'Shadows Into Light', cursive;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+}
+
+.vinces-part .iframe {
+    display: flex;
+    justify-content: center;
+    margin-top: 1vh;
+    box-shadow: 0 0.6px 1.2px rgba(0, 0, 0, 0.008), 0 1.4px 2.7px rgba(0, 0, 0, 0.012), 0 2.3px 4.6px rgba(0, 0, 0, 0.015), 0 3.5px 6.9px rgba(0, 0, 0, 0.018), 0 5px 10px rgba(0, 0, 0, 0.02), 0 7.1px 14.2px rgba(0, 0, 0, 0.022), 0 10.1px 20.1px rgba(0, 0, 0, 0.025), 0 14.6px 29.2px rgba(0, 0, 0, 0.028), 0 22.5px 45px rgba(0, 0, 0, 0.032), 0 40px 80px rgba(0, 0, 0, 0.04);
+}
+
+.vinces-part .container {
+    /* border: rgba(0, 0, 0, 0.644) 1px solid; */
+    margin: 7vh 0vw;
+}
+
+.vinces-part .row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.vinces-part img {
+    width: 19vw;
+}
+
+.vinces-part .album {
+    box-shadow: 0 0.6px 1.2px rgba(0, 0, 0, 0.019), 0 1.4px 2.7px rgba(0, 0, 0, 0.028), 0 2.3px 4.6px rgba(0, 0, 0, 0.034), 0 3.5px 6.9px rgba(0, 0, 0, 0.04), 0 5px 10px rgba(0, 0, 0, 0.045), 0 7.1px 14.2px rgba(0, 0, 0, 0.05), 0 10.1px 20.1px rgba(0, 0, 0, 0.056), 0 14.6px 29.2px rgba(0, 0, 0, 0.062), 0 22.5px 45px rgba(0, 0, 0, 0.071), 0 40px 80px rgba(0, 0, 0, 0.09);
+    cursor: pointer;
+}
+
+.vinces-part .iframe {
+    margin-top: 8vh;
+}
+
+
+
+
+/*--------------- contact form --------------- */
+
+/* .container-fluid{
+    background-color: rgba(14, 14, 14, 0.8);
+} */
+.hr {
+    background: rgba(255, 255, 255, 0.2);
+    height: 2px;
+}
+.hello{
+    color: gray;    
+    font-family: 'Helvetica';
+    font-size: 30px;
+    font-weight: 100;
+    letter-spacing: 4px;
+}
+
+.contact-para{
+    
+    font-size: 15px;
+}
+.wow {
+    color: gray;
+    font-family: 'Monument Extended'; 
+}
+
+#contact-form {
+    
+    margin: 5%;
+    
+}
+
+#contact-form ul {
+    list-style: none;
+    border-radius: 5px;
+    margin-bottom: 40px;
+}
+
+#contact-form li {
+    padding: 10px;
+}
+
+#contact-form li:last-of-type {
+    border-bottom: none;
+}
+
+#contact-form label {
+    display: block;
+    font-size: .8em;
+    color: #999;
+    padding-left: 5px;
+}
+
+#contact-form input, #contact-form textarea {
+    width: 100%;
+    padding: 5px;
+    border: none;
+    resize: vertical;
+    background: transparent;
+    color: #fff;
+    font-weight: bolder;
+}
+
+input:focus {
+    outline: none;
+    border: none;
+}
+
+textarea:focus {
+    outline: none;
+    border: none;
+}
+
+.textarea {
+    border-bottom: 1px solid #dfdfdf;
+}
+
+.send {
+    margin-left: 50px;
+    text-transform: uppercase;
+    padding: 20px 30px;
+    background: transparent;
+    color: #dfdfdf;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+.send:hover {
+    background: #dfdfdf;
+    color: #101010;
+}
+/* end of contact section */
+
+
+/*--------------- footer section --------------- */
+.collab {
+    text-align: right;
+}
+
+.collab p {
+    font-weight: lighter !important;
+    margin-bottom: 20px;
+}
+
+.hr {
+    background: rgba(255, 255, 255, 0.2);
+    height: 1px;
+}
+
+.info h4 {
+    font-size: 18px;
+    font-weight: lighter;
+}
+
+.info p {
+    color: grey;
+    font-weight: lighter;
+}
+
+.info li {
+    font-weight: lighter;
+    color: #fff;
+    font-size: 18px;
+    padding-left: 20px;
+}
+
+#fb::before {
+    display: inline-block;
+    content: '';
+    border-radius: 100%;
+    height: 4px;
+    width: 4px;
+    margin-right: 6px;
+    background: #3b5998;
+}
+
+
+#ig::before {
+    display: inline-block;
+    content: '';
+    border-radius: 100%;
+    height: 4px;
+    width: 4px;
+    margin-right: 6px;
+    background: #fcaf45;
+}
+
+
+#tw::before {
+    display: inline-block;
+    content: '';
+    border-radius: 100%;
+    height: 4px;
+    width: 4px;
+    margin-right: 6px;
+    background: #55acee;
+}
+
+
+#yt::before {
+    display: inline-block;
+    content: '';
+    border-radius: 100%;
+    height: 4px;
+    width: 4px;
+    margin-right: 6px;
+    background: #c4302b;
+}
+
+#media, #address {
+    text-align: right;
+}
+
+#media ul {
+    list-style: none;
+}
+
+#media ul li {
+    display: inline-block;
+}
+
+@media only screen and (max-width:769px) {
+    /* .vinces-part .album {
+        width: 25%;
+    } */
+    /* .stephens-part {
+
+        background-attachment: initial;
+    } */
+    .modal .iframe {
+        width: 90%;
+    }
+    .artist {
+        font-size: 4vw;
+    }
+    .watch {
+        font-size: 3.5vw;
+    }
+    .hero-title {
+        top: 60%;
+    }
+    .hero-title h1 {
+        font-size: 10vw;
+    }
+    #rotated {
+        font-size: 2vw;
+    }
+    .social-media ul li {
+        font-size: 2vw;
+    }
+}
